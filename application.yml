@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: ecommerce-backend
+  datasource:
+    url: jdbc:mysql://localhost:3306/ecommerce_db
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: true
+    show-sql: true
+    open-in-view: false
+  jackson:
+    default-property-inclusion: non_null
+
+
+
+jwt:
+  secret: my-super-secure-secret-key-that-is-at-least-64-characters-long-1234567890abcd1234567890abcd
+  expiration: 86400000
+
+stripe:
+  api-key: ${STRIPE_SECRET_KEY}
+  webhook-key: whsec_your_webhook_key_here
+
+paypal:
+  mode: sandbox
+  client-id: Ac634kAxqn7cIk56VFPIay1Gz6bhC-QMglqBS9XxVNvB_vdih7-V6fnQfJP3Zy23O0on5U8rJHwK9o9I
+  client-secret: EIEMny5OyUkp4Njjtdu-6ovUGUliLIoI3JEIvlvFubEAr_lMILiLXDdcDhBLeN5M6IgxSvky98mrdEtV
+  return-url: http://localhost:8080/api/payment/success
+  cancel-url: http://localhost:8080/api/payment/cancel
+
+server:
+  port: 8080
+  servlet:
+    context-path: /api/v1
+
