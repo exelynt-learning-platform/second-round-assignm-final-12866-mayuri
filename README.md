@@ -1,4 +1,5 @@
 # 🛒 E-Commerce Backend (Spring Boot)
+## Assignment Submission Branch
 
 ## 📌 Project Overview
 This is a backend system for an e-commerce platform built using Spring Boot. It supports user authentication, product management, cart, order processing, and payment integration using Stripe.
